@@ -8,6 +8,9 @@ import './Header.css';
 import dash from '../assets/dash.svg';
 import Input from '@mui/material/Input';
 import useSearch from '../utils/Context';
+import AccountCircleIcon from '@mui/icons-material/AccountCircle';
+import IconButton from '@mui/material/IconButton';
+
 
 function header() {
   const [searchText, dispatch] = useSearch();
@@ -17,17 +20,13 @@ function header() {
       <Form inline>
         <InputGroup>
         <Input placeholder='Search' value={searchText} sx={{  marginLeft:'50px' }} onChange={e=>dispatch(e.target.value)} />
-          {/* <InputGroup.Text id="basic-addon1">@</InputGroup.Text>
-          <Form.Control
-            placeholder="Username"
-            aria-label="Username"
-            aria-describedby="basic-addon1"
-          /> */}
+         
         </InputGroup>
       </Form>
-      <div className=' ' style={{borderRadius:'25%', width:'50px', height:'50px'}}>
-            <img src="https://cdn-icons-png.flaticon.com/512/9131/9131529.png" className='w-100 h-100 object-fit-cover ' />
-          </div>
+     
+          <IconButton aria-label="user" size="large">
+        <AccountCircleIcon />
+      </IconButton>
     </Navbar>
     
     </div>
