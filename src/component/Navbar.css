@@ -1,26 +1,18 @@
 
-.nav{
-    background-color: rgb(0, 0, 63);
-    margin-right: 70rem;
-    
-    display: flex;
-    flex-direction: row;
-    margin-bottom: 40rem;
-    height:55rem;
-}
+
 .nav-pills li a:hover{
     opacity: 100%;
     color: white;
   
 }
-.nav-pills {
-    color: rgb(211, 53, 53);
-  
-}
+
 .opa{
     opacity: 75%;
 }
 .opa:hover{
 
     opacity: 100%;
+}
+.navMenu{
+    color: #fddb3a;
 }
