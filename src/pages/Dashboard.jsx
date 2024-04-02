@@ -4,9 +4,8 @@ import './Dashboard.css';
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
-import ListGroup from 'react-bootstrap/ListGroup';
 import axios from 'axios';
-import React, { useState, useEffect, useContext } from 'react';
+import { useState, useEffect,  } from 'react';
 import { toast } from 'react-toastify';
 import useSearch from '../utils/Context';
 
