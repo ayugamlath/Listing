@@ -1,11 +1,12 @@
 import React from 'react'
-import './Navbar.css'
-
+import '../Styles/Navbar.css'
 import 'bootstrap-icons/font/bootstrap-icons.css';
+
+
 function navbar() {
   const isCurrentLink = (path) => window.location.pathname === path;
   return (
-    <div className='w-25 bg-info bg-gradient' >
+    <div className='w-25   bg-gradient ' style={{background:'#000000'}} >
       <div className='w-100'>
         <div className=' w-100'>
           <div className=' col-auto col-md-2 min-vh-100 w-100'>
@@ -19,7 +20,7 @@ function navbar() {
                 <a href="#" className="nav-link text-white  fs-5 d-flex" aria-current="page">
                   <i className='bi bi-speedometer2'></i>
                   <div className="opa">
-                    <span className={`ms-3 d-none d-sm-inline ${isCurrentLink('/') && 'text-dark'}`}>Dashboard</span></div>
+                    <span className={`ms-3 d-none d-sm-inline ${isCurrentLink('/') && 'text-danger'}`}>Dashboard</span></div>
                 </a>
               </li>
 

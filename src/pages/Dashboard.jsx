@@ -1,6 +1,6 @@
 import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
-import './Dashboard.css';
+import '../Styles/Dashboard.css';
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
@@ -8,6 +8,7 @@ import axios from 'axios';
 import { useState, useEffect,  } from 'react';
 import { toast } from 'react-toastify';
 import useSearch from '../utils/Context';
+import { ListGroup } from 'react-bootstrap';
 
 
 
@@ -72,21 +73,30 @@ const Dashboard = () => {
 
                   <Card.Body>
                     <div style={{ textOverflow: 'clip' }} className='w-100'>
-                      <Card.Title >{data.title.length > 20 ? data.title.slice(0, 24) : data.title}</Card.Title>
+                    <div className=''>
+                    <i className="bi bi-star-fill d-flex align-items-center justify-content-center  gap-2  "  >
+                    <i className="bi bi-star-fill d-flex align-items-center justify-content-center  gap-2 "  >
+                    <i className="bi bi-star-fill d-flex align-items-center justify-content-center  gap-2 "  >
+                         {data.rating.rate}</i></i></i>
+                      </div>
+                      <br />
+                      
+                      <Card.Title className='col-12 d-flex align-items-center justify-content-center  gap-2'>{data.title.length > 20 ? data.title.slice(0, 24) : data.title}</Card.Title>
+                     
                     </div>
                     <div className='col-12 d-flex align-items-center justify-content-center  gap-2'>
                       <div className=''>
                         {data.category}
                       </div>
-                      <div className='border-1 border-secondary '>
-                        {data.price}
-                      </div>
-                      <div className=''>
-                        {data.rating.rate}
-                      </div>
                     </div>
                   </Card.Body>
-                  <Button className='rounded-0 bg-info'>View Property</Button>
+                  <ListGroup className="list-group-flush">
+                  <ListGroup.Item><div className='border-1 border-secondary justify-content-center d-flex '>
+                       USD {data.price}
+                      </div>
+                     </ListGroup.Item>
+                    </ListGroup>
+                  <Button className='rounded-0 ' style={{background:'#F15412'}}>View Property</Button>
                 </Card>
               </Col>
 

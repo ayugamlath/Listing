@@ -2,7 +2,7 @@
 
 .nav-pills li a:hover{
     opacity: 100%;
-    color: white;
+    color: #F15412;
   
 }
 
@@ -10,8 +10,8 @@
     opacity: 75%;
 }
 .opa:hover{
-
-    opacity: 100%;
+    color: #f15512e4;
+    opacity:100%;
 }
 .navMenu{
     color: #fddb3a;
