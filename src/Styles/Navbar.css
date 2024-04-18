@@ -13,6 +13,7 @@
     color: #f15512e4;
     opacity:100%;
 }
-.navMenu{
-    color: #fddb3a;
-}
+
+a:active {
+    color: #F15412;
+  }

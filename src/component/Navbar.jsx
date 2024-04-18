@@ -1,11 +1,12 @@
 import React from 'react'
 import '../Styles/Navbar.css'
 import 'bootstrap-icons/font/bootstrap-icons.css';
-
+import { Outlet, Link } from "react-router-dom"
 
 function navbar() {
-  const isCurrentLink = (path) => window.location.pathname === path;
+
   return (
+    
     <div className='w-25   bg-gradient ' style={{background:'#000000'}} >
       <div className='w-100'>
         <div className=' w-100'>
@@ -20,7 +21,7 @@ function navbar() {
                 <a href="#" className="nav-link text-white  fs-5 d-flex" aria-current="page">
                   <i className='bi bi-speedometer2'></i>
                   <div className="opa">
-                    <span className={`ms-3 d-none d-sm-inline ${isCurrentLink('/') && 'text-danger'}`}>Dashboard</span></div>
+                    <span className='ms-3 d-none d-sm-inline '>Dashboard</span></div>
                 </a>
               </li>
 
@@ -28,7 +29,7 @@ function navbar() {
                 <a href="#" className="nav-link text-white  fs-5 d-flex" aria-current="page">
                   <i className='bi bi-calendar4-week'></i>
                   <div className="opa">
-                    <span className='ms-3 d-none d-sm-inline'>Tours</span></div>
+                    <span className='ms-3 d-none d-sm-inline  '><Link to={`Tours`} style={{ textDecoration: 'none' ,color:'inherit'}}> Tours </Link></span></div>
                 </a>
               </li>
 
@@ -36,7 +37,7 @@ function navbar() {
                 <a href="#" className="nav-link text-white  fs-5 d-flex" aria-current="page">
                   <i className='bi bi-file-ruled'></i>
                   <div className="opa">
-                    <span className='ms-3 d-none d-sm-inline'>Properties</span></div>
+                    <span className='ms-3 d-none d-sm-inline'><Link to={`Properties`} style={{ textDecoration: 'none' ,color:'inherit'}}>Properties</Link></span></div>
                 </a>
               </li>
               <li className="nav-item text-white fs-4 my-1 py-2 py-sm-0">

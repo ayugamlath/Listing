@@ -10,35 +10,11 @@ import { toast } from 'react-toastify';
 import { ListGroup } from 'react-bootstrap';
 import Header from '../component/Header';
 import DashboardPage from './DashboardPage';
+import { Ellipsis } from 'react-bootstrap/esm/PageItem';
+import { Hidden } from '@mui/material';
+import LinesEllipsis from 'react-lines-ellipsis'
 
 const Dashboard = ({filteredData}) => {
-
-  
-
-  // const [data, setData] = useState([])
-  // const [text, setText] = useState("");
-
-  // const getData = async () => {
-  //   try {
-  //     const data = await axios.get('https://fakestoreapi.com/products');
-  //     console.log(data.data);
-  //     setData(data.data)
-  //     // setFilteredData(data.data)
-  //   } catch (error) {
-  //     toast.error('Error in fetching data');
-  //     console.log(error);
-  //   }
-  // }
-
-  // const getInputs = (t) => {
-  //   const filtered = data.filter((item) => item.title.toLowerCase().includes(text.toLowerCase()));
-  //   setFilteredData(filtered);
-  //   setText(t);
-  // }
-
-  // useEffect(() => {
-  //   getData()
-  // }, [])
 
   return (
     <div className='cards pt-4 '>
@@ -63,7 +39,7 @@ const Dashboard = ({filteredData}) => {
             
             filteredData.map((data, index) => (
               <Col xs={{ order: 'first' }} key={index} className='rounded-5 col-12 col-md-6 col-lg-4 '>
-                <Card className='' style={{ maxWidth: '300px' }}>
+                <Card className='' style={{ maxWidth: '300px',height:'450px' }}>
                   <div className='' style={{ height: '200px' }}>
                     <Card.Img variant="top" src={data.image} className='w-100 h-100 object-fit-contain' />
                   </div>
@@ -77,9 +53,17 @@ const Dashboard = ({filteredData}) => {
                          {data.rating.rate}</i></i></i>
                       </div>
                       <br />
-                      
-                      <Card.Title className='col-12 d-flex align-items-center justify-content-center  gap-2'>{data.title.length > 20 ? data.title.slice(0, 23) : data.title}</Card.Title>
-                     
+                      <div className=''>
+                      <Card.Title className='crd' >
+                          <LinesEllipsis
+                                      title={data.title}
+                                      text={data.title}
+                                      maxLine='2'
+                                      ellipsis='...'
+                                      trimRight
+                                      basedOn='letters'/>
+                      </Card.Title>
+                      </div>
                     </div>
                     <div className='col-12 d-flex align-items-center justify-content-center  gap-2'>
                       <div className=''>

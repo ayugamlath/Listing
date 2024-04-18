@@ -13,7 +13,6 @@ const DashboardPage = ({}) => {
 
     const [data, setData] = useState([])
     const [filteredData,setFilteredData] = useState([])
-    const [text, setText] = useState("");
 
     const getData = async () => {
         try {
@@ -29,19 +28,19 @@ const DashboardPage = ({}) => {
     
 
     const filterData  = (t) => {
-        const filtered = data.filter((item) => item.title.toLowerCase().includes(text.toLowerCase()));
+      console.log(t)
+        const filtered = data.filter((item) => item.title.toLowerCase().includes(t.toLowerCase()));
+        
         setFilteredData(filtered);
-        setText(t);
+      
       }
-     
-    //   const filtered = getInputs(text);
 
 
-    useEffect(() => {
-        // toast.success('Welcome to the Dashboard')
-    }
-    ,[]
-    )
+    // useEffect(() => {
+    //     toast.success('Welcome to the Dashboard')
+    // }
+    // ,[]
+    // )
     useEffect(() => {
         getData()
     }, [])
@@ -59,7 +58,7 @@ const DashboardPage = ({}) => {
             <Navbar />
             
             <div className='d-flex flex-column'>
-            <Header value={text} getInput={filterData} />
+            <Header getInput={filterData} />
             <Dashboard  filteredData={filteredData} />
             <Footer></Footer>
             </div>
