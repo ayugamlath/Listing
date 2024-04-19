@@ -5,14 +5,15 @@ import Col from 'react-bootstrap/Col';
 import Card from 'react-bootstrap/Card';
 import { ListGroup } from 'react-bootstrap';
 import Button from 'react-bootstrap/Button';
+import LinesEllipsis from 'react-lines-ellipsis'
 
-const Cards = ({getData}) => {
+const Cards = ({data}) => {
 
   return (
 
 
-    <Col xs={{ order: 'first' }} key={index} className='rounded-5 col-12 col-md-6 col-lg-4 '>
-                <Card className='' style={{ maxWidth: '300px' }}>
+    <Col xs={{ order: 'first' }}  className='rounded-5 col-12 col-md-6 col-lg-4 '>
+                <Card className='' style={{ maxWidth: '300px',height:'450px' }}>
                   <div className='' style={{ height: '200px' }}>
                     <Card.Img variant="top" src={data.image} className='w-100 h-100 object-fit-contain' />
                   </div>
@@ -27,7 +28,15 @@ const Cards = ({getData}) => {
                       </div>
                       <br />
                       
-                      <Card.Title className='col-12 d-flex align-items-center justify-content-center  gap-2'>{data.title.length > 20 ? data.title.slice(0, 23) : data.title}</Card.Title>
+                      <Card.Title className='col-12 d-flex align-items-center justify-content-center  gap-2'>
+                      <LinesEllipsis
+                                      title={data.title}
+                                      text={data.title}
+                                      maxLine='2'
+                                      ellipsis='...'
+                                      trimRight
+                                      basedOn='letters'/>
+                      </Card.Title>
                      
                     </div>
                     <div className='col-12 d-flex align-items-center justify-content-center  gap-2'>

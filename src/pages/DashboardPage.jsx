@@ -6,7 +6,8 @@ import { toast } from 'react-toastify';
 import Footer from '../component/Footer'
 import { useState, useEffect,  } from 'react';
 
-const DashboardPage = ({}) => {
+
+const DashboardPage = () => {
 
     const title = "asdasdssssssss";
   
